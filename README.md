@@ -1,6 +1,6 @@
 # muse-spark-crew
 
-Private skill repo for the **muse-spark-crew** — a 10-agent senior engineering crew running on Muse Spark 1.3 (`opencode-go/muse-spark-1.3-contributor`).
+Skill repo for the **muse-spark-crew** — a 10-agent senior engineering crew running on Muse Spark 1.3 (`opencode-go/muse-spark-1.3-contributor`).
 
 ## Contents
 
