@@ -26,6 +26,10 @@ RULES:
 - Do not rewrite unrelated tests. Fix only what your change broke.
 - Return: tests added + command run + pass/fail + coverage gaps left.
 
+## SECURITY LENS
+- Evil-input tests: injection strings, oversized payloads, auth-bypass attempts (fetch another user's object), expired/tampered tokens, replayed requests.
+- Fuzz the boundaries you touched. A security fix without a regression test is incomplete.
+
 ## RETURN CONTRACT
 - ≤30 lines. Verdict/status first, then files changed, then verification.
 - Files changed: path + one line on what/why each.

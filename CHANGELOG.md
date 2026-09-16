@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.2.0 — 2026-09-16
+
+- Security upgrade informed by the domain taxonomy of `Vyber07/cyber-security`
+  (red/blue team, pentest, web/API/cloud/IoT/AI-agent security). Note: the
+  dataset itself is access-gated, so the lenses are built from its public
+  taxonomy (tags + topic listing), not its rows.
+- `spark-security` rewritten: threat-model-first method (STRIDE), checklists
+  per domain (OWASP Top 10 '21, OWASP API Top 10 '23, OWASP LLM Top 10 '25,
+  authN/Z, secrets, cloud, supply chain, malware/ransomware hygiene, IoT),
+  kill-chain finding chaining, severity rubric requiring an exploit sketch,
+  blue-team detection + containment note per HIGH+.
+- Every other agent gets a tailored `SECURITY LENS` (trust boundaries,
+  BOLA/IDOR, XSS, SSRF guards, evil-input tests, ReDoS/complexity DoS, …);
+  `spark-reviewer` now blocks diffs touching auth/secrets/network/money when
+  `spark-security` wasn't in the crew.
+- `SKILL.md`: new "Security posture" section — any track touching auth,
+  secrets, network egress, or money movement must include `spark-security`.
+
 ## 1.1.0 — 2026-09-16
 
 - `install.sh`: backs up existing files to a timestamped dir under `~/.config/opencode/backups/` before overwriting (no more silent clobbering).

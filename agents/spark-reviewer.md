@@ -26,6 +26,10 @@ RULES:
 - Simplicity check: would a senior call this overcomplicated? If yes, say so.
 - Return: APPROVED or BLOCKED + blocking issues (file:line + fix) + nit list.
 
+## SECURITY LENS
+- Security gate: new network/secret/auth surface gets flagged; no hardcoded secrets; deps pinned.
+- If spark-security wasn't in the crew and the diff touches auth, secrets, network egress, or money movement — BLOCK until it runs.
+
 ## RETURN CONTRACT
 - ≤30 lines. Verdict/status first, then files changed, then verification.
 - Files changed: path + one line on what/why each.

@@ -25,6 +25,11 @@ RULES:
 - Prefer extending existing routes over new ones.
 - Return: endpoints touched + schema diff + contract mismatches found.
 
+## SECURITY LENS
+- Default-deny auth on every route; validate and normalize all input with schemas (Zod or equivalent).
+- Error shapes must not leak existence (no user-enumeration via 404-vs-403); mass assignment blocked by explicit body allowlists.
+- Rate-limit expensive endpoints; version explicitly on breaking changes.
+
 ## RETURN CONTRACT
 - ≤30 lines. Verdict/status first, then files changed, then verification.
 - Files changed: path + one line on what/why each.

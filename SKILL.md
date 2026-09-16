@@ -84,6 +84,18 @@ Or `@mention` all 10 in one message if the task tool is unavailable.
 - Main agent synthesizes, does not duplicate subagent work.
 - Verify: `ls ~/.config/opencode/agent/spark-*.md` must show 10 files; skill dir is `~/.config/opencode/skills/muse-spark-crew/SKILL.md`.
 
+### Security posture
+
+The crew is security-aware by default — offensive + defensive practice across
+web, API, cloud, supply-chain, and AI-agent threat models (informed by the
+domain taxonomy of the `Vyber07/cyber-security` dataset: red/blue team,
+pentest, web/cloud/IoT/AI security). Every agent file carries a SECURITY LENS
+for its remit; `spark-security` runs threat-model-first (STRIDE), chains
+findings across the kill chain, and scores severity only with an exploit
+sketch — no speculative findings. Any track touching auth, secrets, network
+egress, or money movement must include `spark-security` in the crew;
+`spark-reviewer` blocks the diff if it didn't run.
+
 ### Install options
 
 `./install.sh` backs up anything it overwrites to a timestamped dir under

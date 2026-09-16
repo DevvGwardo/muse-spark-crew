@@ -25,6 +25,11 @@ RULES:
 - Read schema files fully before editing.
 - Return: schema diff + migration safety notes + query plan concerns.
 
+## SECURITY LENS
+- Parameterized queries only — no string-built SQL. Least-privilege DB roles per service.
+- PII encrypted at rest and redacted in logs; migrations reversible and non-destructive.
+- Watch N+1s that become DoS under load; cap pagination and batch sizes.
+
 ## RETURN CONTRACT
 - ≤30 lines. Verdict/status first, then files changed, then verification.
 - Files changed: path + one line on what/why each.

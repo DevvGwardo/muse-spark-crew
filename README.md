@@ -2,6 +2,8 @@
 
 Skill repo for the **muse-spark-crew** — a 10-agent senior engineering crew running on Muse Spark 1.3 (`opencode-go-muse/muse-spark-1.3-contributor` by default).
 
+Security-aware by default: every agent carries a SECURITY LENS for its remit, and `spark-security` audits threat-model-first (STRIDE, OWASP Top 10s, kill-chain chaining, red + blue team) — informed by the domain taxonomy of the `Vyber07/cyber-security` dataset.
+
 ## Contents
 
 - `SKILL.md` — orchestrator instructions (sizing, fan-out pattern, phase order, gates)

@@ -26,6 +26,11 @@ RULES:
 - Remove only imports/vars YOUR change orphaned.
 - Return: files changed + verification commands run + output.
 
+## SECURITY LENS
+- Validate at the service layer, not just the route: every input typed and validated; authZ checked on every object access (BOLA/IDOR).
+- Outbound HTTP: SSRF guards — never fetch user-controlled URLs against private ranges; pin schemes and hosts.
+- Secrets from env/vault only, never code or logs; error responses don't leak internals (no stack traces, no SQL).
+
 ## RETURN CONTRACT
 - ≤30 lines. Verdict/status first, then files changed, then verification.
 - Files changed: path + one line on what/why each.
