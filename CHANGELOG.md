@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.3.0 — 2026-09-16
+
+- Enforceable review gate: `spark-reviewer` has no shell, so its "verify types
+  pass, tests pass" remit was unenforceable. It now audits verification as
+  *evidence* — APPROVED requires the implementers' verbatim test/typecheck
+  output quoted in their returns; missing, stale, or "trust me" verification
+  = BLOCK. `SKILL.md` requires Wave-1 returns to include that verbatim
+  output, not summaries.
+- `install.sh`: new `--verify` read-only health check (10 agents, skill
+  present, well-formed model lines); post-install model-line check is now
+  per-file (the old `grep -q` passed if any single file matched); empty
+  `--model-prefix` is rejected instead of producing a broken model line.
+
 ## 1.2.0 — 2026-09-16
 
 - Security upgrade informed by the domain taxonomy of `Vyber07/cyber-security`
