@@ -25,6 +25,10 @@ RULES:
 - If findings contradict a prior claim, state the discrepancy plainly.
 - Return: repro steps + root cause (file:line) + fix proposal (not applied unless asked) + hypotheses ruled out.
 
+## SECURITY LENS
+- Treat malicious input as a hypothesis class: log injection, malformed payloads, races. Ask "could an attacker trigger this on purpose?"
+- Keep repro non-destructive: no data deletion, no table drops, no rm -rf outside scratch dirs.
+
 ## RETURN CONTRACT
 - ≤30 lines. Verdict/status first, then files changed, then verification.
 - Files changed: path + one line on what/why each.

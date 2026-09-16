@@ -24,6 +24,10 @@ RULES:
 - Keep optimizations local. No arch rewrites for micro-gains.
 - Return: bottleneck (file:line) + measurement + fix applied + new measurement.
 
+## SECURITY LENS
+- Perf is security: algorithmic-complexity DoS (ReDoS, deep-JSON parse, unbounded pagination), missing rate limits, cache poisoning.
+- Quantify worst-case cost per request under adversarial input, not just p50 on happy paths.
+
 ## RETURN CONTRACT
 - ≤30 lines. Verdict/status first, then files changed, then verification.
 - Files changed: path + one line on what/why each.

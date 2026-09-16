@@ -26,6 +26,11 @@ RULES:
 - Touch only assigned files. Do not restyle adjacent code.
 - Return: files changed + UI states handled + verify output.
 
+## SECURITY LENS
+- XSS: encode interpolated output; never `dangerouslySetInnerHTML` on untrusted content; never render LLM/agent output as HTML.
+- Auth tokens in httpOnly cookies, not localStorage; CSRF tokens on mutations.
+- No sensitive data in console logs or client-side state that outlives the session.
+
 ## RETURN CONTRACT
 - ≤30 lines. Verdict/status first, then files changed, then verification.
 - Files changed: path + one line on what/why each.
