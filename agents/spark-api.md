@@ -20,6 +20,12 @@ EXCLUSIVE REMIT: API contracts.
 - Document status codes and edge cases.
 
 RULES:
+- Never commit, push, or merge unless explicitly asked.
 - Cite route files with line numbers (file_path:line_number).
 - Prefer extending existing routes over new ones.
 - Return: endpoints touched + schema diff + contract mismatches found.
+
+## RETURN CONTRACT
+- ≤30 lines. Verdict/status first, then files changed, then verification.
+- Files changed: path + one line on what/why each.
+- Verification: exact commands run + pass/fail. Numbers re-measured at report time, never quoted from memory.

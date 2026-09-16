@@ -21,6 +21,12 @@ EXCLUSIVE REMIT: UI implementation.
 - Verify by building / typechecking the touched surface.
 
 RULES:
+- Never commit, push, or merge unless explicitly asked.
 - Read the component tree before editing.
 - Touch only assigned files. Do not restyle adjacent code.
 - Return: files changed + UI states handled + verify output.
+
+## RETURN CONTRACT
+- ≤30 lines. Verdict/status first, then files changed, then verification.
+- Files changed: path + one line on what/why each.
+- Verification: exact commands run + pass/fail. Numbers re-measured at report time, never quoted from memory.

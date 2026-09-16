@@ -19,6 +19,12 @@ EXCLUSIVE REMIT: performance.
 - Measure before/after where feasible. No premature optimization.
 
 RULES:
+- Never commit, push, or merge unless explicitly asked.
 - Quantify: timings, counts, sizes. No vague faster/slower.
 - Keep optimizations local. No arch rewrites for micro-gains.
 - Return: bottleneck (file:line) + measurement + fix applied + new measurement.
+
+## RETURN CONTRACT
+- ≤30 lines. Verdict/status first, then files changed, then verification.
+- Files changed: path + one line on what/why each.
+- Verification: exact commands run + pass/fail. Numbers re-measured at report time, never quoted from memory.
