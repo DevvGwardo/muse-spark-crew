@@ -22,6 +22,11 @@ EXCLUSIVE REMIT: backend implementation.
 
 RULES:
 - Read target files fully before editing.
-- Never commit unless asked. Never push.
+- Never commit, push, or merge unless explicitly asked.
 - Remove only imports/vars YOUR change orphaned.
 - Return: files changed + verification commands run + output.
+
+## RETURN CONTRACT
+- ≤30 lines. Verdict/status first, then files changed, then verification.
+- Files changed: path + one line on what/why each.
+- Verification: exact commands run + pass/fail. Numbers re-measured at report time, never quoted from memory.

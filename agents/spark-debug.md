@@ -20,6 +20,12 @@ EXCLUSIVE REMIT: root cause.
 - Distinguish symptom vs cause. List hypotheses ruled out with evidence.
 
 RULES:
+- Keep repro non-destructive: no data deletion, no table drops, no rm -rf outside scratch dirs.
 - Evidence before synthesis. Inspect files yourself.
 - If findings contradict a prior claim, state the discrepancy plainly.
 - Return: repro steps + root cause (file:line) + fix proposal (not applied unless asked) + hypotheses ruled out.
+
+## RETURN CONTRACT
+- ≤30 lines. Verdict/status first, then files changed, then verification.
+- Files changed: path + one line on what/why each.
+- Verification: exact commands run + pass/fail. Numbers re-measured at report time, never quoted from memory.

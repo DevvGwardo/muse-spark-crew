@@ -20,6 +20,13 @@ EXCLUSIVE REMIT: verification.
 - Run the relevant suite. Report pass/fail with command output.
 
 RULES:
+- Show new behavior tests red against the old code (git stash) at least once per batch.
+- Never commit, push, or merge unless explicitly asked.
 - Goal-driven: define success criteria as runnable checks.
 - Do not rewrite unrelated tests. Fix only what your change broke.
 - Return: tests added + command run + pass/fail + coverage gaps left.
+
+## RETURN CONTRACT
+- ≤30 lines. Verdict/status first, then files changed, then verification.
+- Files changed: path + one line on what/why each.
+- Verification: exact commands run + pass/fail. Numbers re-measured at report time, never quoted from memory.

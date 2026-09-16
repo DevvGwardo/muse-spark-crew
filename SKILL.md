@@ -84,6 +84,14 @@ Or `@mention` all 10 in one message if the task tool is unavailable.
 - Main agent synthesizes, does not duplicate subagent work.
 - Verify: `ls ~/.config/opencode/agent/spark-*.md` must show 10 files; skill dir is `~/.config/opencode/skills/muse-spark-crew/SKILL.md`.
 
+### Install options
+
+`./install.sh` backs up anything it overwrites to a timestamped dir under
+`~/.config/opencode/backups/` first. Flags: `--model-prefix <provider>`
+rewrites the agents' `model:` lines when your provider isn't the default
+(`MODEL_PREFIX` env var works too), `--dry-run`, `--uninstall`, `--help`.
+Respects `XDG_CONFIG_HOME`.
+
 ### Capacity and failure handling
 
 - A `Monthly usage limit reached` failure is workspace-side billing, not auth. Do NOT retry-loop it, and do NOT swap credentials to dodge it — a different key does not change workspace billing.
