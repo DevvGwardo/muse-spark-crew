@@ -26,6 +26,7 @@ Existing files are backed up to a timestamped dir under `~/.config/opencode/back
 ```bash
 ./install.sh --model-prefix musepark  # rewrite agent `model:` lines for your provider
 ./install.sh --dry-run                 # show what would change, change nothing
+./install.sh --verify                  # health-check an existing install
 ./install.sh --uninstall               # remove the skill + the 10 spark agents
 ./install.sh --help
 ```

@@ -80,6 +80,7 @@ Or `@mention` all 10 in one message if the task tool is unavailable.
 - Each subprompt must state: goal, exact files, return format (files changed + verification), and a ≤30-line return cap.
 - Subagents never merge to main, never release/deploy, never push without an explicit ask. They push feature branches and open PRs; the orchestrator merges.
 - Verification commands are mandatory in every implementer brief: `npx tsc -b --force` (NOT bare `-b` — the incremental cache masks errors a clean-room build catches), targeted vitest, then the full suite. Numbers are re-measured at report time, never quoted from memory.
+- Wave-1 returns must include the *verbatim* verification output (commands + results), not summaries — `spark-reviewer` gates on that evidence and has no shell to re-run anything.
 - Prefer behavioral pins over source-text pins in tests the crew writes: assert what the code DOES (call it with the evil input), not what it SAYS (regex over source). A new behavior test must be shown red against the old code (stash-and-run) at least once per batch.
 - Main agent synthesizes, does not duplicate subagent work.
 - Verify: `ls ~/.config/opencode/agent/spark-*.md` must show 10 files; skill dir is `~/.config/opencode/skills/muse-spark-crew/SKILL.md`.
